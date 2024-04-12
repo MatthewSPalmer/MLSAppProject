@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,14 +55,95 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="AddHouse.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AddHouse.Designer.cs">
+      <DependentUpon>AddHouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Agent.cs">
+      <DependentUpon>MLSAppDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AgentCRUD.cs" />
+    <Compile Include="AgentLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgentLogin.Designer.cs">
+      <DependentUpon>AgentLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgentPortal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgentPortal.Designer.cs">
+      <DependentUpon>AgentPortal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientPortal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientPortal.Designer.cs">
+      <DependentUpon>ClientPortal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentAgent.cs" />
+    <Compile Include="HouseCRUD.cs" />
+    <Compile Include="Landing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Landing.Designer.cs">
+      <DependentUpon>Landing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="House.cs">
+      <DependentUpon>MLSAppDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MLSAppDBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MLSAppDBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MLSAppDBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MLSAppDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MLSAppDBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MLSAppDBModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterAgent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterAgent.Designer.cs">
+      <DependentUpon>RegisterAgent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateAgent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateAgent.Designer.cs">
+      <DependentUpon>UpdateAgent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateHouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateHouse.Designer.cs">
+      <DependentUpon>UpdateHouse.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddHouse.resx">
+      <DependentUpon>AddHouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentLogin.resx">
+      <DependentUpon>AgentLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentPortal.resx">
+      <DependentUpon>AgentPortal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientPortal.resx">
+      <DependentUpon>ClientPortal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Landing.resx">
+      <DependentUpon>Landing.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +153,23 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RegisterAgent.resx">
+      <DependentUpon>RegisterAgent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateAgent.resx">
+      <DependentUpon>UpdateAgent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateHouse.resx">
+      <DependentUpon>UpdateHouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="MLSAppDBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MLSAppDBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="MLSAppDBModel.edmx.diagram">
+      <DependentUpon>MLSAppDBModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +182,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MLSAppDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MLSAppDBModel.Context.cs</LastGenOutput>
+      <DependentUpon>MLSAppDBModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="MLSAppDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MLSAppDBModel.edmx</DependentUpon>
+      <LastGenOutput>MLSAppDBModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

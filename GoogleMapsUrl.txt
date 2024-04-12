@@ -1,0 +1,28 @@
+https://www.google.com/maps/place/7664+Colorado+Ave,+Fairchild+AFB,+WA+99011/
+
+public static string BuildMapsUrl(string street, string city, string state, int zip)
+{
+    string formattedUrl = $"https://www.google.com/maps/search/?api=1&query={street}+{city}+{state}+{zip}";
+    return formattedUrl.Replace(" ", "%20");
+}
+
+
+https://www.google.com/maps/search/?api=1&query=7107%20Nebraska%20Ave+Fairchild%20AFB+WA+99011
+
+
+< $350K
+$350K - $400K
+$400K - $450K
+$450K - $500K
+$500K - $550K
+$550K - $600K
+> $600K
+
+< 1500
+1500 - 2000
+2000 - 2500
+2500 - 3000
+3000 - 3250
+> 3250
+
+		mapUrl	"https://www.google.com/maps/search/?api=1&query=8407%20N%20Summerhill%20Ln+Spokane+WA+99208"	string
